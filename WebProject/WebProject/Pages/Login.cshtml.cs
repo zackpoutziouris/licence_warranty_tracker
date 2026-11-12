@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebProject.Data;
@@ -13,10 +14,14 @@ namespace WebProject.Pages
     public class LoginModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly IPasswordHasher<Staff> _passwordHasher;
 
-        public LoginModel(ApplicationDbContext context)
+        public LoginModel(
+            ApplicationDbContext context,
+            IPasswordHasher<Staff> passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
 
         [BindProperty]
@@ -33,20 +38,36 @@ namespace WebProject.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            string email = Email.Trim().ToLowerInvariant();
+
             // Find staff member by email
             var staff = await _context.Staff
                 .FirstOrDefaultAsync(s =>
-                    s.StaffEmail.ToLower() == Email.Trim().ToLower());
+                    s.StaffEmail.ToLower() == email);
 
-            // Check whether staff member exists
             if (staff == null)
             {
                 ErrorMessage = "Invalid email or password.";
                 return Page();
             }
 
-            // Compare entered password with database password
-            if (staff.PasswordHash != Password)
+            // Verify password against the stored hash
+            PasswordVerificationResult result;
+
+            try
+            {
+                result = _passwordHasher.VerifyHashedPassword(
+                    staff,
+                    staff.PasswordHash,
+                    Password);
+            }
+            catch (FormatException)
+            {
+                ErrorMessage = "Invalid email or password.";
+                return Page();
+            }
+
+            if (result == PasswordVerificationResult.Failed)
             {
                 ErrorMessage = "Invalid email or password.";
                 return Page();
@@ -55,13 +76,16 @@ namespace WebProject.Pages
             // Create authentication claims
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier,
+                new Claim(
+                    ClaimTypes.NameIdentifier,
                     staff.StaffId.ToString()),
 
-                new Claim(ClaimTypes.Name,
+                new Claim(
+                    ClaimTypes.Name,
                     staff.StaffEmail),
 
-                new Claim(ClaimTypes.Email,
+                new Claim(
+                    ClaimTypes.Email,
                     staff.StaffEmail)
             };
 
@@ -71,12 +95,11 @@ namespace WebProject.Pages
 
             var principal = new ClaimsPrincipal(identity);
 
-            // Sign the user in
+            // Sign in using cookie authentication
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 principal);
 
-            // Redirect to dashboard
             return RedirectToPage("/Dashboard");
         }
     }

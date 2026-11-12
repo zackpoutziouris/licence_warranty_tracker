@@ -201,7 +201,6 @@ C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\o
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\scopedcss\bundle\WebProject.styles.css
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\scopedcss\projectbundle\WebProject.bundle.scp.css
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\spexgrz034-{0}-tchfgznwy8-tchfgznwy8.gz
-C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\rg1w9jxb2u-{0}-0y55fim6w7-0y55fim6w7.gz
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\w5vimncr91-{0}-gmtxue3pxl-gmtxue3pxl.gz
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\ur4qi4yubi-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\zn15q3t45l-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -342,3 +341,4 @@ C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\o
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\WebProject.pdb
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\WebProject.genruntimeconfig.cache
 C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\ref\WebProject.dll
+C:\Users\skull\Documents\GitHub\licence_warranty_tracker\WebProject\WebProject\obj\Debug\net11.0\compressed\rg1w9jxb2u-{0}-e64ig03fon-e64ig03fon.gz

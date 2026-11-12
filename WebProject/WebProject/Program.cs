@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using WebProject.Data;
+using Microsoft.AspNetCore.Identity;
+using WebProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,7 @@ var connectionString = builder.Configuration
 // Connect to SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
+builder.Services.AddScoped<IPasswordHasher<Staff>, PasswordHasher<Staff>>();
 
 // Register cookie authentication
 builder.Services
@@ -31,6 +34,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizePage("/Dashboard");
+    options.Conventions.AuthorizePage("/CreateAccount");
     options.Conventions.AllowAnonymousToPage("/Login");
 });
 
