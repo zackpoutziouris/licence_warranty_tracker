@@ -1,0 +1,29 @@
+﻿@page
+@model WebProject.Pages.DashboardModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+
+    <h1>Asset Tracker Dashboard</h1>
+
+    <p>Welcome, @User.Identity?.Name!</p>
+
+    <hr />
+
+    <h3>Welcome to the Asset & Licence Tracker</h3>
+
+    <p>
+        From here you will be able to manage client assets,
+        software licences and expiry dates.
+    </p>
+
+    <form method="post" asp-page-handler="Logout">
+        <button type="submit" class="btn btn-danger">
+            Logout
+        </button>
+    </form>
+
+</div>
