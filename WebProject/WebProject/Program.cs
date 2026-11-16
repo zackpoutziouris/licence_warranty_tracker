@@ -6,6 +6,7 @@ using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
 using WebProject.Services;
+using QuestPDF.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddScoped<IPasswordHasher<Staff>, PasswordHasher<Staff>>();
 builder.Services.AddScoped<AuditService>();
+builder.Services.AddScoped<AuditPdfService>();
 
 // Register cookie authentication
 builder.Services
@@ -103,6 +105,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AllowAnonymousToPage("/PasswordChanged");
 });
 
+QuestPDF.Settings.License = LicenseType.Community;
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

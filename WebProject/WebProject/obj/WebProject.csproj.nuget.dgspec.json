@@ -85,6 +85,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[11.0.0, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2026.9.2, )"
             }
           },
           "imports": [
