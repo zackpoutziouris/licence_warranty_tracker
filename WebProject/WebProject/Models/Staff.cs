@@ -20,5 +20,8 @@ namespace WebProject.Models
 
         [Column("is_admin")]
         public bool IsAdmin { get; set; } = false;
+
+        [Column("session_version")]
+        public int SessionVersion { get; set; } =  1;
     }
 }

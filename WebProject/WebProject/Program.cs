@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.EntityFrameworkCore;
-using WebProject.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using WebProject.Data;
 using WebProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,9 +26,70 @@ builder.Services
     {
         options.LoginPath = "/Login";
         options.AccessDeniedPath = "/Login";
+
+        // Authentication cookie lifetime
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
         options.SlidingExpiration = true;
+
+        // Cookie security
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+
+        // Validate the session against the database
+        options.Events.OnValidatePrincipal = async context =>
+        {
+            var principal = context.Principal;
+
+            string? staffId = principal?
+                .FindFirstValue(ClaimTypes.NameIdentifier);
+
+            string? sessionVersion = principal?
+                .FindFirstValue("SessionVersion");
+
+            if (!int.TryParse(staffId, out int id) ||
+                !int.TryParse(sessionVersion, out int version))
+            {
+                context.RejectPrincipal();
+
+                await context.HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+
+                return;
+            }
+
+            // Retrieve the current staff account
+            var db = context.HttpContext.RequestServices
+                .GetRequiredService<ApplicationDbContext>();
+
+            var staff = await db.Staff
+                .AsNoTracking()
+                .FirstOrDefaultAsync(s => s.StaffId == id);
+
+            // Reject deleted accounts and outdated sessions
+            if (staff == null || staff.SessionVersion != version)
+            {
+                context.RejectPrincipal();
+
+                await context.HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+
+                return;
+            }
+
+            // Ensure the cookie's role matches the database
+            string expectedRole = staff.IsAdmin ? "Admin" : "Staff";
+
+            if (!principal!.IsInRole(expectedRole))
+            {
+                context.RejectPrincipal();
+
+                await context.HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+            }
+        };
     });
+
 
 builder.Services.AddAuthorization();
 
@@ -35,6 +98,7 @@ builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizePage("/Dashboard");
     options.Conventions.AllowAnonymousToPage("/Login");
+    options.Conventions.AllowAnonymousToPage("/PasswordChanged");
 });
 
 var app = builder.Build();

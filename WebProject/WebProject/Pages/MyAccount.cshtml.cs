@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -121,13 +123,20 @@ namespace WebProject.Pages
                 CurrentStaff,
                 Input.NewPassword);
 
-            // Save the updated password
+            // Invalidate all existing login sessions
+            CurrentStaff.SessionVersion++;
+
             await _context.SaveChangesAsync();
 
-            TempData["SuccessMessage"] =
-                "Your password has been updated successfully.";
+            // Expire the current browser's authentication cookie
+            await HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToPage("/MyAccount");
+            // Allow the confirmation page to display
+            TempData["PasswordChanged"] = true;
+
+            // Show confirmation before returning to Login
+            return RedirectToPage("/PasswordChanged");
         }
     }
 }

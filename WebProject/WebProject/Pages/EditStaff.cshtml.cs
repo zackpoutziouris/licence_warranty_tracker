@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -123,11 +125,13 @@ namespace WebProject.Pages
                 return Page();
             }
 
-            // Update email and administrator status
+            bool emailChanged = staff.StaffEmail != email;
+            bool roleChanged = staff.IsAdmin != Input.IsAdmin;
+
+            // Update account details
             staff.StaffEmail = email;
             staff.IsAdmin = Input.IsAdmin;
 
-            // Only update password when a new one was provided
             if (changingPassword)
             {
                 staff.PasswordHash = _passwordHasher.HashPassword(
@@ -135,7 +139,42 @@ namespace WebProject.Pages
                     Input.NewPassword!);
             }
 
+            // Invalidate sessions when authentication details change
+            if (changingPassword || emailChanged || roleChanged)
+            {
+                staff.SessionVersion++;
+            }
+
+
             await _context.SaveChangesAsync();
+
+            string? currentStaffId =
+                User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            bool editingOwnAccount =
+                staff.StaffId.ToString() == currentStaffId;
+
+            // If an admin changes their own password
+            if (editingOwnAccount && changingPassword)
+            {
+                // Expire the current authentication cookie
+                await HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+
+                // Allow the password confirmation page to display
+                TempData["PasswordChanged"] = true;
+
+                return RedirectToPage("/PasswordChanged");
+            }
+
+            // If an admin changes their own email or permissions
+            if (editingOwnAccount && (emailChanged || roleChanged))
+            {
+                await HttpContext.SignOutAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme);
+
+                return RedirectToPage("/Login");
+            }
 
             TempData["SuccessMessage"] =
                 "Staff account updated successfully.";
