@@ -34,7 +34,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizePage("/Dashboard");
-    options.Conventions.AuthorizePage("/CreateAccount");
     options.Conventions.AllowAnonymousToPage("/Login");
 });
 

@@ -27,9 +27,12 @@
         software licences and expiry dates.
     </p>
 
-    <a asp-page="/CreateAccount"
-       class="btn btn-primary mt-3">
-        Create Staff Account
-    </a>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-page="/CreateAccount"
+           class="btn btn-primary mt-3">
+            Create Staff Account
+        </a>
+    }
 
 </div>

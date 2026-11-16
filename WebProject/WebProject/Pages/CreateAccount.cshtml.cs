@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using WebProject.Data;
@@ -10,7 +11,7 @@ using WebProject.Models;
 
 namespace WebProject.Pages
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class CreateAccountModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -42,6 +43,8 @@ namespace WebProject.Pages
             [DataType(DataType.Password)]
             [Compare("Password", ErrorMessage = "Passwords do not match.")]
             public string ConfirmPassword { get; set; } = string.Empty;
+
+            public bool IsAdmin { get; set; } = false;
         }
 
         public void OnGet()
@@ -73,7 +76,8 @@ namespace WebProject.Pages
             // Create the new staff member
             var staff = new Staff
             {
-                StaffEmail = email
+                StaffEmail = email,
+                IsAdmin = Input.IsAdmin
             };
 
             // Hash the password before saving

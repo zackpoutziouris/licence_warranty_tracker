@@ -55,6 +55,17 @@
                                   class="text-danger"></span>
                         </div>
 
+                        <div class="mb-3 form-check">
+                            <input asp-for="Input.IsAdmin"
+                                   class="form-check-input"
+                                   type="checkbox" />
+
+                            <label asp-for="Input.IsAdmin"
+                                   class="form-check-label">
+                                Give this user administrator permissions
+                            </label>
+                        </div>
+
                         <button type="submit"
                                 class="btn btn-primary w-100">
                             Create Account

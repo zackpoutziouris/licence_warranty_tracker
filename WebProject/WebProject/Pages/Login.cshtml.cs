@@ -76,17 +76,13 @@ namespace WebProject.Pages
             // Create authentication claims
             var claims = new List<Claim>
             {
-                new Claim(
-                    ClaimTypes.NameIdentifier,
-                    staff.StaffId.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, staff.StaffId.ToString()),
+                new Claim(ClaimTypes.Name, staff.StaffEmail),
+                new Claim(ClaimTypes.Email, staff.StaffEmail),
 
                 new Claim(
-                    ClaimTypes.Name,
-                    staff.StaffEmail),
-
-                new Claim(
-                    ClaimTypes.Email,
-                    staff.StaffEmail)
+                    ClaimTypes.Role,
+                    staff.IsAdmin ? "Admin" : "Staff")
             };
 
             var identity = new ClaimsIdentity(
