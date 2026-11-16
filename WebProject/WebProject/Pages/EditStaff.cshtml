@@ -1,0 +1,100 @@
+﻿@page "{id:int}"
+@model WebProject.Pages.EditStaffModel
+
+@{
+    ViewData["Title"] = "Edit Staff Account";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow">
+                <div class="card-body p-4">
+
+                    <h2 class="mb-4">Edit Staff Account</h2>
+
+                    <form method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Input.Email"
+                                   class="form-label">
+                                Email Address
+                            </label>
+
+                            <input asp-for="Input.Email"
+                                   class="form-control" />
+
+                            <span asp-validation-for="Input.Email"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Input.NewPassword"
+                                   class="form-label">
+                                New Password
+                            </label>
+
+                            <input asp-for="Input.NewPassword"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="new-password"
+                                   placeholder="Leave blank to keep current password" />
+
+                            <span asp-validation-for="Input.NewPassword"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Input.ConfirmPassword"
+                                   class="form-label">
+                                Confirm New Password
+                            </label>
+
+                            <input asp-for="Input.ConfirmPassword"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="new-password" />
+
+                            <span asp-validation-for="Input.ConfirmPassword"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input asp-for="Input.IsAdmin"
+                                   type="checkbox"
+                                   class="form-check-input" />
+
+                            <label asp-for="Input.IsAdmin"
+                                   class="form-check-label">
+                                Administrator privileges
+                            </label>
+
+                            <span asp-validation-for="Input.IsAdmin"
+                                  class="text-danger d-block"></span>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary w-100">
+                            Save Changes
+                        </button>
+
+                        <a asp-page="/StaffAccounts"
+                           class="btn btn-secondary w-100 mt-2">
+                            Cancel
+                        </a>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

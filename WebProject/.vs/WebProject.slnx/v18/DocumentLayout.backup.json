@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\editstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\editstaff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\editstaff.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\editstaff.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\staffaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\staffaccounts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\staffaccounts.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\staffaccounts.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\createaccount.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\createaccount.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\createaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\createaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,17 +62,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "EditStaff.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditStaff.cshtml.cs",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\EditStaff.cshtml.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditStaff.cshtml.cs",
+              "RelativeToolTip": "WebProject\\Pages\\EditStaff.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T12:55:45.521Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditStaff.cshtml",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditStaff.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\EditStaff.cshtml",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditStaff.cshtml",
+              "RelativeToolTip": "WebProject\\Pages\\EditStaff.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-16T12:55:38.824Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StaffAccounts.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\StaffAccounts.cshtml.cs",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\StaffAccounts.cshtml.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\StaffAccounts.cshtml.cs",
+              "RelativeToolTip": "WebProject\\Pages\\StaffAccounts.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T12:54:18.041Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StaffAccounts.cshtml",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\StaffAccounts.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\StaffAccounts.cshtml",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\StaffAccounts.cshtml",
+              "RelativeToolTip": "WebProject\\Pages\\StaffAccounts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-16T12:54:11.947Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CreateAccount.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\CreateAccount.cshtml.cs",
               "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml.cs",
               "RelativeToolTip": "WebProject\\Pages\\CreateAccount.cshtml.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAIA9wEUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAApwEYAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-12T14:34:46.759Z",
               "EditorCaption": "",
@@ -64,21 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateAccount.cshtml",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Pages\\CreateAccount.cshtml",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml",
-              "RelativeToolTip": "WebProject\\Pages\\CreateAccount.cshtml",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwDcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-12T14:34:22.474Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Dashboard.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\Dashboard.cshtml.cs",
@@ -91,13 +149,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\Dashboard.cshtml",
               "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml",
               "RelativeToolTip": "WebProject\\Pages\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-12T14:04:22.144Z",
               "EditorCaption": "",
@@ -105,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\Login.cshtml.cs",
@@ -114,12 +172,38 @@
               "ViewState": "AgIAADMAAAAAAAAAAAAiwFUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-12T14:01:45.721Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Program.cs",
+              "RelativeDocumentMoniker": "WebProject\\Program.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Program.cs",
+              "RelativeToolTip": "WebProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T13:49:11.062Z",
               "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
+              "Title": "CreateAccount.cshtml",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\CreateAccount.cshtml",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateAccount.cshtml",
+              "RelativeToolTip": "WebProject\\Pages\\CreateAccount.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwDcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-12T14:34:22.474Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Login.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\Login.cshtml",
@@ -132,21 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Program.cs",
-              "RelativeDocumentMoniker": "WebProject\\Program.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Program.cs",
-              "RelativeToolTip": "WebProject\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T13:49:11.062Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "WebProject\\Data\\ApplicationDbContext.cs",
@@ -159,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Staff.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Models\\Staff.cs",
               "RelativeDocumentMoniker": "WebProject\\Models\\Staff.cs",
@@ -168,7 +238,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-12T13:43:14.646Z",
-              "EditorCaption": "",
               "OwnerCaption": "%2"
             }
           ]

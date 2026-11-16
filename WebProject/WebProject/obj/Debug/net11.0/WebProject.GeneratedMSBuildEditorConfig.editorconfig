@@ -381,6 +381,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/EditStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0YWZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -395,6 +399,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/StaffAccounts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhZmZBY2NvdW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/_ViewImports.cshtml]

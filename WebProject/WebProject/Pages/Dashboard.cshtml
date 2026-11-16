@@ -29,10 +29,19 @@
 
     @if (User.IsInRole("Admin"))
     {
-        <a asp-page="/CreateAccount"
-           class="btn btn-primary mt-3">
-            Create Staff Account
-        </a>
+        <div class="mt-3 d-flex gap-2">
+
+            <a asp-page="/CreateAccount"
+               class="btn btn-primary">
+                Create Staff Account
+            </a>
+
+            <a asp-page="/StaffAccounts"
+               class="btn btn-secondary">
+                View / Update Staff Accounts
+            </a>
+
+        </div>
     }
 
 </div>
