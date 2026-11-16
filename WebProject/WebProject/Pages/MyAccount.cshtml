@@ -1,0 +1,156 @@
+﻿@page
+@model WebProject.Pages.MyAccountModel
+
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<div class="container mt-4">
+
+    <h1>My Account</h1>
+
+    <p class="text-muted">
+        View your account details and update your password.
+    </p>
+
+    <hr />
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="row">
+
+        <!-- Account Information -->
+        <div class="col-md-5 mb-4">
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h4 class="card-title mb-3">
+                        Account Details
+                    </h4>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Staff ID</label>
+                        <p>@Model.CurrentStaff?.StaffId</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Email Address</label>
+                        <p>@Model.CurrentStaff?.StaffEmail</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Administrator Privileges</label>
+
+                        <p>
+                            @if (Model.CurrentStaff?.IsAdmin == true)
+                            {
+                                <span class="badge bg-success">Yes</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">No</span>
+                            }
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Change Password -->
+        <div class="col-md-7">
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h4 class="card-title mb-3">
+                        Change Password
+                    </h4>
+
+                    <form method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Input.CurrentPassword"
+                                   class="form-label">
+                                Current Password
+                            </label>
+
+                            <input asp-for="Input.CurrentPassword"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="current-password" />
+
+                            <span asp-validation-for="Input.CurrentPassword"
+                                  class="text-danger"></span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Input.NewPassword"
+                                   class="form-label">
+                                New Password
+                            </label>
+
+                            <input asp-for="Input.NewPassword"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="new-password" />
+
+                            <span asp-validation-for="Input.NewPassword"
+                                  class="text-danger"></span>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Input.ConfirmPassword"
+                                   class="form-label">
+                                Confirm New Password
+                            </label>
+
+                            <input asp-for="Input.ConfirmPassword"
+                                   type="password"
+                                   class="form-control"
+                                   autocomplete="new-password" />
+
+                            <span asp-validation-for="Input.ConfirmPassword"
+                                  class="text-danger"></span>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Update Password
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <a asp-page="/Dashboard"
+       class="btn btn-secondary mt-3">
+        Back to Dashboard
+    </a>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
