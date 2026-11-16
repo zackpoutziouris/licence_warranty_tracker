@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 namespace WebProject.Pages
 {
@@ -17,13 +18,16 @@ namespace WebProject.Pages
     {
         private readonly ApplicationDbContext _context;
         private readonly IPasswordHasher<Staff> _passwordHasher;
+        private readonly AuditService _auditService;
 
         public MyAccountModel(
             ApplicationDbContext context,
-            IPasswordHasher<Staff> passwordHasher)
+            IPasswordHasher<Staff> passwordHasher,
+            AuditService auditService)
         {
             _context = context;
             _passwordHasher = passwordHasher;
+            _auditService = auditService;
         }
 
         public Staff? CurrentStaff { get; set; }
@@ -123,19 +127,22 @@ namespace WebProject.Pages
                 CurrentStaff,
                 Input.NewPassword);
 
-            // Invalidate all existing login sessions
+            // Invalidate existing login sessions
             CurrentStaff.SessionVersion++;
 
+            // Add an audit record to the same database context
+            _auditService.AddAudit(
+                $"Staff ID {CurrentStaff.StaffId} changed their password.");
+
+            // Save the password change and audit record together
             await _context.SaveChangesAsync();
 
-            // Expire the current browser's authentication cookie
+            // Sign out the current user
             await HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
 
-            // Allow the confirmation page to display
             TempData["PasswordChanged"] = true;
 
-            // Show confirmation before returning to Login
             return RedirectToPage("/PasswordChanged");
         }
     }

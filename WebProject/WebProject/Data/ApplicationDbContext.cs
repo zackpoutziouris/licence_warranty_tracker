@@ -8,5 +8,6 @@ namespace WebProject.Data
         : DbContext(options)
     {
         public DbSet<Staff> Staff { get; set; }
+        public DbSet<Audit> Audit { get; set; }
     }
 }

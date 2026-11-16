@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 namespace WebProject.Pages
 {
@@ -17,13 +18,16 @@ namespace WebProject.Pages
     {
         private readonly ApplicationDbContext _context;
         private readonly IPasswordHasher<Staff> _passwordHasher;
+        private readonly AuditService _auditService;
 
         public EditStaffModel(
             ApplicationDbContext context,
-            IPasswordHasher<Staff> passwordHasher)
+            IPasswordHasher<Staff> passwordHasher,
+            AuditService auditService)
         {
             _context = context;
             _passwordHasher = passwordHasher;
+            _auditService = auditService;
         }
 
         [BindProperty]
@@ -125,18 +129,39 @@ namespace WebProject.Pages
                 return Page();
             }
 
+
             bool emailChanged = staff.StaffEmail != email;
             bool roleChanged = staff.IsAdmin != Input.IsAdmin;
+
+            // Record email changes
+            if (emailChanged)
+            {
+                _auditService.AddAudit(
+                    $"Staff ID {currentId} changed email for staff ID {staff.StaffId}.");
+            }
+
+            // Record administrator privilege changes
+            if (roleChanged)
+            {
+                string newRole = Input.IsAdmin ? "Admin" : "Staff";
+
+                _auditService.AddAudit(
+                    $"Staff ID {currentId} changed privileges for staff ID {staff.StaffId} to {newRole}.");
+            }
 
             // Update account details
             staff.StaffEmail = email;
             staff.IsAdmin = Input.IsAdmin;
 
+            // Update password if provided
             if (changingPassword)
             {
                 staff.PasswordHash = _passwordHasher.HashPassword(
                     staff,
                     Input.NewPassword!);
+
+                _auditService.AddAudit(
+                    $"Staff ID {currentId} changed password for staff ID {staff.StaffId}.");
             }
 
             // Invalidate sessions when authentication details change
@@ -145,14 +170,11 @@ namespace WebProject.Pages
                 staff.SessionVersion++;
             }
 
-
+            // Save account changes and audit records together
             await _context.SaveChangesAsync();
 
-            string? currentStaffId =
-                User.FindFirstValue(ClaimTypes.NameIdentifier);
-
             bool editingOwnAccount =
-                staff.StaffId.ToString() == currentStaffId;
+                staff.StaffId.ToString() == currentId;
 
             // If an admin changes their own password
             if (editingOwnAccount && changingPassword)

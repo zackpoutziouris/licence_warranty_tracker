@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 namespace WebProject.Pages
 {
@@ -12,10 +13,12 @@ namespace WebProject.Pages
     public class StaffAccountsModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly AuditService _auditService;    
 
-        public StaffAccountsModel(ApplicationDbContext context)
+        public StaffAccountsModel(ApplicationDbContext context, AuditService auditService)
         {
             _context = context;
+            _auditService = auditService;
         }
 
         public List<Staff> StaffAccounts { get; set; } = new();
@@ -58,7 +61,17 @@ namespace WebProject.Pages
                 return NotFound();
             }
 
+            string? currentStaffId =
+                User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // Add audit entry before deleting the account
+            _auditService.AddAudit(
+                $"Staff ID {currentStaffId} deleted Staff ID {staff.StaffId}.");
+
+            // Delete the account
             _context.Staff.Remove(staff);
+
+            // Save both operations together
             await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] =

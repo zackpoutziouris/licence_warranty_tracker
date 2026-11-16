@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 namespace WebProject.Pages
 {
@@ -15,13 +17,16 @@ namespace WebProject.Pages
     {
         private readonly ApplicationDbContext _context;
         private readonly IPasswordHasher<Staff> _passwordHasher;
+        private readonly AuditService _auditService;
 
         public CreateAccountModel(
             ApplicationDbContext context,
-            IPasswordHasher<Staff> passwordHasher)
+            IPasswordHasher<Staff> passwordHasher,
+            AuditService auditService)
         {
             _context = context;
             _passwordHasher = passwordHasher;
+            _auditService = auditService;
         }
 
         [BindProperty]
@@ -86,7 +91,16 @@ namespace WebProject.Pages
 
             // Add the new staff member to the database
             _context.Staff.Add(staff);
+
             await _context.SaveChangesAsync();
+
+            string? currentStaffId =
+                User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            string role = staff.IsAdmin ? "Admin" : "Staff";
+
+            await _auditService.LogAsync(
+                $"Staff ID {currentStaffId} created Staff ID {staff.StaffId} with role {role}.");
 
             TempData["SuccessMessage"] = "Staff account created successfully.";
 

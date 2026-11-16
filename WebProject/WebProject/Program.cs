@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ var connectionString = builder.Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddScoped<IPasswordHasher<Staff>, PasswordHasher<Staff>>();
+builder.Services.AddScoped<AuditService>();
 
 // Register cookie authentication
 builder.Services

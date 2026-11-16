@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebProject.Data;
 using WebProject.Models;
+using WebProject.Services;
 
 namespace WebProject.Pages
 {
@@ -14,13 +15,16 @@ namespace WebProject.Pages
     {
         private readonly ApplicationDbContext _context;
         private readonly IPasswordHasher<Staff> _passwordHasher;
+        private readonly AuditService _auditService;
 
         public LoginModel(
             ApplicationDbContext context,
-            IPasswordHasher<Staff> passwordHasher)
+            IPasswordHasher<Staff> passwordHasher,
+            AuditService auditService)
         {
             _context = context;
             _passwordHasher = passwordHasher;
+            _auditService = auditService;
         }
 
         [BindProperty]
@@ -104,8 +108,10 @@ namespace WebProject.Pages
 
             // Sign in using cookie authentication
             await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                principal);
+                CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            await _auditService.LogAsync(
+                $"Staff ID {staff.StaffId} logged in.");
 
             return RedirectToPage("/Dashboard");
         }
