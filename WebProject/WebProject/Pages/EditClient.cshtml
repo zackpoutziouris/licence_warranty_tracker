@@ -1,0 +1,85 @@
+﻿@page
+@model WebProject.Pages.EditClientModel
+
+@{
+    ViewData["Title"] = "Edit Client";
+}
+
+<div class="container mt-4">
+
+    <h1>Edit Client</h1>
+
+    <p class="text-muted">
+        Update client details and staff assignments.
+    </p>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+            <form method="post"
+                  asp-route-id="@Model.ClientId">
+
+                <div asp-validation-summary="All"
+                     class="text-danger"></div>
+
+                <div class="mb-4">
+                    <label asp-for="Input.ClientName"
+                           class="form-label">
+                        Client Name
+                    </label>
+
+                    <input asp-for="Input.ClientName"
+                           class="form-control" />
+
+                    <span asp-validation-for="Input.ClientName"
+                          class="text-danger"></span>
+                </div>
+
+                <h5>Assigned Staff</h5>
+
+                <p class="text-muted">
+                    Select the staff members who should
+                    receive notifications for this client.
+                </p>
+
+                @foreach (var staff in Model.AvailableStaff)
+                {
+                    <div class="form-check mb-2">
+
+                        <input type="checkbox"
+                               class="form-check-input"
+                               name="SelectedStaffIds"
+                               value="@staff.StaffId"
+                               id="staff_@staff.StaffId"
+                               checked="@(Model.SelectedStaffIds.Contains(staff.StaffId))" />
+
+                        <label class="form-check-label"
+                               for="staff_@staff.StaffId">
+
+                            @staff.StaffEmail
+                            @(staff.IsAdmin ? "(Admin)" : "")
+
+                        </label>
+                    </div>
+                }
+
+                <button type="submit"
+                        class="btn btn-primary mt-4">
+                    Save Changes
+                </button>
+
+                <a asp-page="/ClientDetails"
+                   asp-route-id="@Model.ClientId"
+                   class="btn btn-secondary mt-4">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

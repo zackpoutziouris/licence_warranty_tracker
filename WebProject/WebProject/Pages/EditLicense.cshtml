@@ -1,0 +1,65 @@
+﻿@page
+@model WebProject.Pages.EditLicenseModel
+
+@{
+    ViewData["Title"] = "Edit License";
+}
+
+<div class="container mt-4">
+
+    <h1>Edit License</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+            <form method="post"
+                  asp-route-id="@Model.LicenseId">
+
+                <div asp-validation-summary="All"
+                     class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.LicenseName"
+                           class="form-label">
+                        License Name
+                    </label>
+
+                    <input asp-for="Input.LicenseName"
+                           class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.ExpiryDate"
+                           class="form-label">
+                        License Expiry Date
+                    </label>
+
+                    <input asp-for="Input.ExpiryDate"
+                           type="date"
+                           min="@Model.MinimumExpiryDate"
+                           class="form-control" />
+
+                    <span asp-validation-for="Input.ExpiryDate"
+                          class="text-danger"></span>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Save Changes
+                </button>
+
+                <a asp-page="/ClientDetails"
+                   asp-route-id="@Model.ClientId"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

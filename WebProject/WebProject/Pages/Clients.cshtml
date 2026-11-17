@@ -1,0 +1,61 @@
+﻿@page
+@model WebProject.Pages.ClientsModel
+
+@{
+    ViewData["Title"] = "Manage Clients";
+}
+
+<div class="container mt-4">
+
+    <h1>Manage Clients</h1>
+
+    <p class="text-muted">
+        View and manage client organisations.
+    </p>
+
+    <a asp-page="/CreateClient"
+       class="btn btn-primary mb-3">
+        Create New Client
+    </a>
+
+    <a asp-page="/Dashboard"
+       class="btn btn-secondary mb-3">
+        Back to Dashboard
+    </a>
+
+    @if (Model.Clients.Count == 0)
+    {
+        <div class="alert alert-info">
+            No clients have been added yet.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Client ID</th>
+                    <th>Client Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var client in Model.Clients)
+                {
+                    <tr>
+                        <td>@client.ClientId</td>
+                        <td>@client.ClientName</td>
+                        <td>
+                            <a asp-page="/ClientDetails"
+                               asp-route-id="@client.ClientId"
+                               class="btn btn-sm btn-primary">
+                                View Details
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

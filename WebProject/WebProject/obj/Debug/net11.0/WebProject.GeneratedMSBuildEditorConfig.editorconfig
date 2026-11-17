@@ -373,16 +373,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/AddLicense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkTGljZW5zZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/AddWarranty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkV2FycmFudHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/ClientDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/Clients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/CreateAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/CreateClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQ2xpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/EditClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdENsaWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/EditLicense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdExpY2Vuc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/EditStaff.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0YWZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/EditWarranty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFdhcnJhbnR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/skull/Documents/GitHub/licence_warranty_tracker/WebProject/WebProject/Pages/Error.cshtml]

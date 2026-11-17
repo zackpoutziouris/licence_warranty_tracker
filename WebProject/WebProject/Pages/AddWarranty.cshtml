@@ -1,0 +1,64 @@
+﻿@page
+@model WebProject.Pages.AddWarrantyModel
+
+@{
+    ViewData["Title"] = "Add Warranty";
+}
+
+<div class="container mt-4">
+
+    <h1>Add Warranty</h1>
+
+    <p class="text-muted">
+        Client: @Model.Client.ClientName
+    </p>
+
+    <form method="post"
+          asp-route-clientId="@Model.Client.ClientId">
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Input.AssetName"
+                   class="form-label">
+                Asset Name
+            </label>
+
+            <input asp-for="Input.AssetName"
+                   class="form-control" />
+
+            <span asp-validation-for="Input.AssetName"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.ExpiryDate"
+                   class="form-label">
+                Warranty Expiry Date
+            </label>
+
+            <input asp-for="Input.ExpiryDate"
+                   type="date"
+                   class="form-control" />
+
+            <span asp-validation-for="Input.ExpiryDate"
+                  class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Add Warranty
+        </button>
+
+        <a asp-page="/ClientDetails"
+           asp-route-id="@Model.Client.ClientId"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,89 @@
+﻿@page
+@model WebProject.Pages.CreateClientModel
+
+@{
+    ViewData["Title"] = "Create Client";
+}
+
+<div class="container mt-4">
+
+    <h1>Create Client</h1>
+
+    <p class="text-muted">
+        Create a new client and assign staff members.
+    </p>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+            <form method="post">
+
+                <div asp-validation-summary="All"
+                     class="text-danger"></div>
+
+                <div class="mb-4">
+                    <label asp-for="Input.ClientName"
+                           class="form-label">
+                        Client Name
+                    </label>
+
+                    <input asp-for="Input.ClientName"
+                           class="form-control" />
+
+                    <span asp-validation-for="Input.ClientName"
+                          class="text-danger"></span>
+                </div>
+
+                <h5>Assign Staff</h5>
+
+                <p class="text-muted">
+                    Select the staff members responsible
+                    for this client.
+                </p>
+
+                @if (Model.AvailableStaff.Count == 0)
+                {
+                    <p>No staff accounts available.</p>
+                }
+                else
+                {
+                    @foreach (var staff in Model.AvailableStaff)
+                    {
+                        <div class="form-check mb-2">
+
+                            <input type="checkbox"
+                                   class="form-check-input"
+                                   name="SelectedStaffIds"
+                                   value="@staff.StaffId"
+                                   id="staff_@staff.StaffId"
+                                   checked="@(Model.SelectedStaffIds.Contains(staff.StaffId))" />
+
+                            <label class="form-check-label"
+                                   for="staff_@staff.StaffId">
+                                @staff.StaffEmail
+                                @(staff.IsAdmin ? "(Admin)" : "")
+                            </label>
+
+                        </div>
+                    }
+                }
+
+                <button type="submit"
+                        class="btn btn-primary mt-3">
+                    Create Client
+                </button>
+
+                <a asp-page="/Clients"
+                   class="btn btn-secondary mt-3">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

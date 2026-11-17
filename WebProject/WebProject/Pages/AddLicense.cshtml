@@ -1,0 +1,64 @@
+﻿@page
+@model WebProject.Pages.AddLicenseModel
+
+@{
+    ViewData["Title"] = "Add License";
+}
+
+<div class="container mt-4">
+
+    <h1>Add License</h1>
+
+    <p class="text-muted">
+        Client: @Model.Client.ClientName
+    </p>
+
+    <form method="post"
+          asp-route-clientId="@Model.Client.ClientId">
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Input.LicenseName"
+                   class="form-label">
+                License Name
+            </label>
+
+            <input asp-for="Input.LicenseName"
+                   class="form-control" />
+
+            <span asp-validation-for="Input.LicenseName"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.ExpiryDate"
+                   class="form-label">
+                License Expiry Date
+            </label>
+
+            <input asp-for="Input.ExpiryDate"
+                   type="date"
+                   class="form-control" />
+
+            <span asp-validation-for="Input.ExpiryDate"
+                  class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Add License
+        </button>
+
+        <a asp-page="/ClientDetails"
+           asp-route-id="@Model.Client.ClientId"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
