@@ -126,15 +126,33 @@
                                 <tr>
                                     <td>@warranty.WarrantyId</td>
                                     <td>@warranty.AssetName</td>
-                                    <td>
-                                        @warranty.ExpiryDate
-                                    </td>
+                                    <td>@warranty.ExpiryDate</td>
+
                                     <td class="text-end">
-                                        <a asp-page="/EditWarranty"
-                                           asp-route-id="@warranty.WarrantyId"
-                                           class="btn btn-sm btn-outline-primary">
-                                            Edit
-                                        </a>
+                                        <div class="d-flex justify-content-end gap-2">
+
+                                            <!-- Edit Warranty -->
+                                            <a asp-page="/EditWarranty"
+                                               asp-route-id="@warranty.WarrantyId"
+                                               class="btn btn-sm btn-outline-primary">
+                                                Edit
+                                            </a>
+
+                                            <!-- Delete Warranty -->
+                                            <form method="post"
+                                                  asp-page-handler="DeleteWarranty"
+                                                  asp-route-id="@Model.Client.ClientId"
+                                                  asp-route-warrantyId="@warranty.WarrantyId"
+                                                  onsubmit="return confirm('Are you sure you want to delete this warranty?');">
+
+                                                <button type="submit"
+                                                        class="btn btn-sm btn-outline-danger">
+                                                    Delete
+                                                </button>
+
+                                            </form>
+
+                                        </div>
                                     </td>
                                 </tr>
                             }
@@ -192,15 +210,33 @@
                                 <tr>
                                     <td>@license.LicenseId</td>
                                     <td>@license.LicenseName</td>
-                                    <td>
-                                        @license.ExpiryDate
-                                    </td>
+                                    <td>@license.ExpiryDate</td>
+
                                     <td class="text-end">
-                                        <a asp-page="/EditLicense"
-                                           asp-route-id="@license.LicenseId"
-                                           class="btn btn-sm btn-outline-primary">
-                                            Edit
-                                        </a>
+                                        <div class="d-flex justify-content-end gap-2">
+
+                                            <!-- Edit Licence -->
+                                            <a asp-page="/EditLicense"
+                                               asp-route-id="@license.LicenseId"
+                                               class="btn btn-sm btn-outline-primary">
+                                                Edit
+                                            </a>
+
+                                            <!-- Delete Licence -->
+                                            <form method="post"
+                                                  asp-page-handler="DeleteLicense"
+                                                  asp-route-id="@Model.Client.ClientId"
+                                                  asp-route-licenseId="@license.LicenseId"
+                                                  onsubmit="return confirm('Are you sure you want to delete this licence?');">
+
+                                                <button type="submit"
+                                                        class="btn btn-sm btn-outline-danger">
+                                                    Delete
+                                                </button>
+
+                                            </form>
+
+                                        </div>
                                     </td>
                                 </tr>
                             }

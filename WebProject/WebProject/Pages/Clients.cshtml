@@ -13,15 +13,25 @@
         View and manage client organisations.
     </p>
 
-    <a asp-page="/CreateClient"
-       class="btn btn-primary mb-3">
-        Create New Client
-    </a>
+    <!-- Success Message -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success mb-3">
+            @TempData["SuccessMessage"]
+        </div>
+    }
 
-    <a asp-page="/Dashboard"
-       class="btn btn-secondary mb-3">
-        Back to Dashboard
-    </a>
+    <div class="d-flex gap-2 mb-3">
+        <a asp-page="/CreateClient"
+           class="btn btn-primary">
+            Create New Client
+        </a>
+
+        <a asp-page="/Dashboard"
+           class="btn btn-secondary">
+            Back to Dashboard
+        </a>
+    </div>
 
     @if (Model.Clients.Count == 0)
     {
@@ -31,31 +41,49 @@
     }
     else
     {
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Client ID</th>
-                    <th>Client Name</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
 
-            <tbody>
-                @foreach (var client in Model.Clients)
-                {
+                <thead>
                     <tr>
-                        <td>@client.ClientId</td>
-                        <td>@client.ClientName</td>
-                        <td>
-                            <a asp-page="/ClientDetails"
-                               asp-route-id="@client.ClientId"
-                               class="btn btn-sm btn-primary">
-                                View Details
-                            </a>
-                        </td>
+                        <th>Client ID</th>
+                        <th>Client Name</th>
+                        <th class="text-end">Actions</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    @foreach (var client in Model.Clients)
+                    {
+                        <tr>
+                            <td>@client.ClientId</td>
+                            <td>@client.ClientName</td>
+
+                            <td class="text-end">
+                                <div class="d-flex justify-content-end gap-2">
+
+                                    <!-- View Client -->
+                                    <a asp-page="/ClientDetails"
+                                       asp-route-id="@client.ClientId"
+                                       class="btn btn-sm btn-primary">
+                                        View Details
+                                    </a>
+
+                                    <!-- Delete Client -->
+                                    <a asp-page="/DeleteClient"
+                                       asp-route-id="@client.ClientId"
+                                       class="btn btn-sm btn-outline-danger">
+                                        Delete
+                                    </a>
+
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
     }
+
 </div>

@@ -1,0 +1,72 @@
+﻿@page
+@model WebProject.Pages.DeleteClientModel
+
+@{
+    ViewData["Title"] = "Delete Client";
+}
+
+<div class="container mt-4 mb-5">
+
+    <h1>Delete Client</h1>
+
+    <div class="card border-danger shadow-sm mt-4">
+        <div class="card-body p-4">
+
+            <h4 class="text-danger mb-3">
+                Confirm Client Deletion
+            </h4>
+
+            <p>
+                Are you sure you want to delete
+                <strong>@Model.ClientName</strong>
+                (Client ID: @Model.ClientId)?
+            </p>
+
+            <div class="alert alert-warning">
+                <strong>Warning:</strong>
+                This will permanently delete the client
+                and all associated records.
+            </div>
+
+            <h5>Records that will be deleted:</h5>
+
+            <ul class="list-group mb-4">
+                <li class="list-group-item">
+                    Warranties:
+                    <strong>@Model.WarrantyCount</strong>
+                </li>
+
+                <li class="list-group-item">
+                    Licences:
+                    <strong>@Model.LicenseCount</strong>
+                </li>
+
+                <li class="list-group-item">
+                    Staff assignments:
+                    <strong>@Model.StaffAssignmentCount</strong>
+                </li>
+            </ul>
+
+            <p class="text-muted">
+                Staff accounts will not be deleted.
+                All deletions will be recorded in the audit trail.
+            </p>
+
+            <form method="post"
+                  asp-route-id="@Model.ClientId">
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Permanently Delete Client
+                </button>
+
+                <a asp-page="/Clients"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
