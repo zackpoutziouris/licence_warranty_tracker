@@ -23,5 +23,8 @@ namespace WebProject.Models
 
         [Column("session_version")]
         public int SessionVersion { get; set; } =  1;
+
+        public ICollection<ClientStaff> ClientStaff { get; set; }
+            = new List<ClientStaff>();
     }
 }
