@@ -5,85 +5,268 @@
     ViewData["Title"] = "Manage Clients";
 }
 
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
 
-    <h1>Manage Clients</h1>
+    <!-- Page Header -->
+    <div class="d-flex flex-wrap justify-content-between
+        align-items-center gap-3 mb-4">
 
-    <p class="text-muted">
-        View and manage client organisations.
-    </p>
+        <div>
+            <h1 class="mb-1">Manage Clients</h1>
+            <p class="text-muted mb-0">
+                View client inventory and expiry status.
+            </p>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+            <a asp-page="/CreateClient"
+               class="btn btn-primary">
+                Create New Client
+            </a>
+
+            <a asp-page="/Dashboard"
+               class="btn btn-secondary">
+                Back to Dashboard
+            </a>
+        </div>
+    </div>
 
     <!-- Success Message -->
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success mb-3">
+        <div class="alert alert-success mb-4">
             @TempData["SuccessMessage"]
         </div>
     }
 
-    <div class="d-flex gap-2 mb-3">
-        <a asp-page="/CreateClient"
-           class="btn btn-primary">
-            Create New Client
-        </a>
+    <!-- Search Bar -->
+    <form method="get" id="clientSearchForm" class="mb-4">
+        <div class="input-group">
 
-        <a asp-page="/Dashboard"
-           class="btn btn-secondary">
-            Back to Dashboard
-        </a>
-    </div>
+            <input type="search"
+                   name="SearchTerm"
+                   value="@Model.SearchTerm"
+                   class="form-control"
+                   placeholder="Search clients by name..."
+                   aria-label="Search clients by name" />
 
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+
+            <a asp-page="/Clients"
+               class="btn btn-outline-secondary">
+                Clear
+            </a>
+
+        </div>
+    </form>
+
+    <!-- Client Cards -->
     @if (Model.Clients.Count == 0)
     {
         <div class="alert alert-info">
-            No clients have been added yet.
+            No clients found.
         </div>
     }
     else
     {
-        <div class="table-responsive">
-            <table class="table table-striped align-middle">
+        @foreach (var client in Model.Clients)
+        {
+            <div class="card shadow-sm mb-4">
 
-                <thead>
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Client Name</th>
-                        <th class="text-end">Actions</th>
-                    </tr>
-                </thead>
+                <div class="card-body p-4">
 
-                <tbody>
-                    @foreach (var client in Model.Clients)
-                    {
-                        <tr>
-                            <td>@client.ClientId</td>
-                            <td>@client.ClientName</td>
+                    <!-- Client Name -->
+                    <div class="d-flex flex-wrap
+                        justify-content-between
+                        align-items-center gap-2 mb-4">
 
-                            <td class="text-end">
-                                <div class="d-flex justify-content-end gap-2">
+                        <div>
+                            <h3 class="h5 mb-1">
+                                @client.ClientName
+                            </h3>
 
-                                    <!-- View Client -->
-                                    <a asp-page="/ClientDetails"
-                                       asp-route-id="@client.ClientId"
-                                       class="btn btn-sm btn-primary">
-                                        View Details
-                                    </a>
+                            <span class="text-muted">
+                                Client ID: @client.ClientId
+                            </span>
+                        </div>
 
-                                    <!-- Delete Client -->
-                                    <a asp-page="/DeleteClient"
-                                       asp-route-id="@client.ClientId"
-                                       class="btn btn-sm btn-outline-danger">
-                                        Delete
-                                    </a>
+                        <div class="d-flex flex-wrap gap-2">
 
+                            <a asp-page="/ClientDetails"
+                               asp-route-id="@client.ClientId"
+                               class="btn btn-sm btn-primary">
+                                View Details
+                            </a>
+
+                            <a asp-page="/DeleteClient"
+                               asp-route-id="@client.ClientId"
+                               class="btn btn-sm btn-outline-danger">
+                                Delete
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Warranty Statistics -->
+                    <h4 class="h6 mb-3">
+                        Warranties
+                        <span class="text-muted">
+                            (@client.Warranties.Total total)
+                        </span>
+                    </h4>
+
+                    <div class="row g-3 mb-4">
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold">
+                                    @client.Warranties.Days30Plus
                                 </div>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
+                                <small class="text-muted">
+                                    30+ Days
+                                </small>
+                            </div>
+                        </div>
 
-            </table>
-        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold">
+                                    @client.Warranties.Days7To29
+                                </div>
+                                <small class="text-muted">
+                                    7–29 Days
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold text-warning">
+                                    @client.Warranties.Under7Days
+                                </div>
+                                <small class="text-muted">
+                                    Under 7 Days
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold text-danger">
+                                    @client.Warranties.Expired
+                                </div>
+                                <small class="text-muted">
+                                    Expired
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr />
+
+                    <!-- Licence Statistics -->
+                    <h4 class="h6 mb-3">
+                        Licences
+                        <span class="text-muted">
+                            (@client.Licenses.Total total)
+                        </span>
+                    </h4>
+
+                    <div class="row g-3">
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold">
+                                    @client.Licenses.Days30Plus
+                                </div>
+                                <small class="text-muted">
+                                    30+ Days
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold">
+                                    @client.Licenses.Days7To29
+                                </div>
+                                <small class="text-muted">
+                                    7–29 Days
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold text-warning">
+                                    @client.Licenses.Under7Days
+                                </div>
+                                <small class="text-muted">
+                                    Under 7 Days
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="border rounded p-3 text-center h-100">
+                                <div class="fs-4 fw-bold text-danger">
+                                    @client.Licenses.Expired
+                                </div>
+                                <small class="text-muted">
+                                    Expired
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        }
     }
 
 </div>
+
+
+@section Scripts {
+    <script>
+        const searchInput = document.querySelector(
+            'input[name="SearchTerm"]'
+        );
+
+        const searchForm = document.getElementById(
+            'clientSearchForm'
+        );
+
+        let searchTimeout;
+
+        // Restore focus after an automatic search
+        if (sessionStorage.getItem('restoreSearchFocus') === 'true') {
+            searchInput.focus();
+
+            // Place cursor at the end of the search text
+            const textLength = searchInput.value.length;
+            searchInput.setSelectionRange(textLength, textLength);
+
+            sessionStorage.removeItem('restoreSearchFocus');
+        }
+
+        // Automatically search after typing
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+
+            searchTimeout = setTimeout(() => {
+
+                // Remember to focus the search bar after reload
+                sessionStorage.setItem('restoreSearchFocus', 'true');
+
+                searchForm.requestSubmit();
+
+            }, 500);
+        });
+    </script>
+}

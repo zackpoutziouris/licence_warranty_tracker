@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clients.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clients.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clientdetails.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clientdetails.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clientdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clientdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\deleteclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -77,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\createclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\createclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\clients.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\clients.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -194,25 +194,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DeleteClient.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\DeleteClient.cshtml.cs",
-              "RelativeDocumentMoniker": "WebProject\\Pages\\DeleteClient.cshtml.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\DeleteClient.cshtml.cs",
-              "RelativeToolTip": "WebProject\\Pages\\DeleteClient.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T14:09:37.319Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "DeleteClient.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\DeleteClient.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\DeleteClient.cshtml",
@@ -221,12 +207,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-17T14:09:32.148Z",
-              "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AddWarranty.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\AddWarranty.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\AddWarranty.cshtml.cs",
@@ -239,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AddWarranty.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\AddWarranty.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\AddWarranty.cshtml",
@@ -252,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AddLicense.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\AddLicense.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\AddLicense.cshtml.cs",
@@ -265,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AddLicense.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\AddLicense.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\AddLicense.cshtml",
@@ -278,13 +263,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Clients.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\Clients.cshtml",
               "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml",
               "RelativeToolTip": "WebProject\\Pages\\Clients.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwDkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-17T13:33:19.749Z",
               "EditorCaption": "",
@@ -292,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ClientDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\ClientDetails.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\ClientDetails.cshtml",
@@ -301,18 +286,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAPwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-17T13:37:04.373Z",
-              "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ClientDetails.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\ClientDetails.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\ClientDetails.cshtml.cs",
               "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\ClientDetails.cshtml.cs",
               "RelativeToolTip": "WebProject\\Pages\\ClientDetails.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-17T13:37:08.671Z",
               "EditorCaption": "",
@@ -320,7 +304,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
+              "Title": "Clients.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml.cs",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\Clients.cshtml.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml.cs",
+              "RelativeToolTip": "WebProject\\Pages\\Clients.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T13:33:24.864Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeleteClient.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\DeleteClient.cshtml.cs",
+              "RelativeDocumentMoniker": "WebProject\\Pages\\DeleteClient.cshtml.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\DeleteClient.cshtml.cs",
+              "RelativeToolTip": "WebProject\\Pages\\DeleteClient.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T14:09:37.319Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "EditWarranty.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditWarranty.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditWarranty.cshtml",
@@ -333,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "EditWarranty.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditWarranty.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditWarranty.cshtml.cs",
@@ -346,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EditLicense.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditLicense.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditLicense.cshtml",
@@ -359,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "EditLicense.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditLicense.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditLicense.cshtml.cs",
@@ -372,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UkDateHelper.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Helpers\\UkDateHelper.cs",
               "RelativeDocumentMoniker": "WebProject\\Helpers\\UkDateHelper.cs",
@@ -385,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "EditClient.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditClient.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditClient.cshtml",
@@ -398,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "EditClient.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\EditClient.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\EditClient.cshtml.cs",
@@ -411,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CreateClient.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateClient.cshtml.cs",
               "RelativeDocumentMoniker": "WebProject\\Pages\\CreateClient.cshtml.cs",
@@ -424,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "WebProject",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\WebProject.csproj",
               "RelativeDocumentMoniker": "WebProject\\WebProject.csproj",
@@ -437,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CreateClient.cshtml",
               "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\CreateClient.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Pages\\CreateClient.cshtml",
@@ -446,19 +457,6 @@
               "ViewState": "AgIAACQAAAAAAAAAAAAuwFgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-17T13:34:12.647Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Clients.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml.cs",
-              "RelativeDocumentMoniker": "WebProject\\Pages\\Clients.cshtml.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Clients.cshtml.cs",
-              "RelativeToolTip": "WebProject\\Pages\\Clients.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T13:33:24.864Z",
               "OwnerCaption": "%2"
             },
             {
