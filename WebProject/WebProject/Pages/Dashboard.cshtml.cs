@@ -11,42 +11,41 @@ using WebProject.Services;
 
 namespace WebProject.Pages
 {
-    [Authorize]
+    [Authorize(Roles = "Admin,Staff")]
     public class DashboardModel : PageModel
     {
         private readonly AuditService _auditService;
         private readonly ApplicationDbContext _context;
 
-        public DashboardModel(
-            AuditService auditService,
-            ApplicationDbContext context)
+        public DashboardModel(AuditService auditService, ApplicationDbContext context)
         {
             _auditService = auditService;
             _context = context;
         }
 
-        // Overall statistics
         public int TotalClients { get; set; }
-
         public ExpirySummary TotalWarranties { get; set; } = new();
         public ExpirySummary TotalLicenses { get; set; } = new();
-
-        // Individual client statistics
         public List<ClientSummary> ClientSummaries { get; set; } = new();
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            // Only admins can see statistics for all clients
-            if (User.IsInRole("Admin"))
-            {
-                await LoadClientStatisticsAsync();
-            }
-        }
+            var query = _context.Clients.AsNoTracking().AsQueryable();
 
-        private async Task LoadClientStatisticsAsync()
-        {
-            var clients = await _context.Clients
-                .AsNoTracking()
+            // Admins see all clients. Staff see only clients assigned to them.
+            if (!User.IsInRole("Admin"))
+            {
+                string? staffIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (!int.TryParse(staffIdValue, out int staffId))
+                {
+                    return Forbid();
+                }
+
+                query = query.Where(c =>
+                    c.ClientStaff.Any(cs => cs.StaffId == staffId));
+            }
+
+            var clients = await query
                 .Include(c => c.Warranties)
                 .Include(c => c.Licenses)
                 .AsSplitQuery()
@@ -59,36 +58,30 @@ namespace WebProject.Pages
             {
                 ClientId = client.ClientId,
                 ClientName = client.ClientName,
-
                 Warranties = ExpirySummaryService.Calculate(
                     client.Warranties.Select(w => w.ExpiryDate)),
-
                 Licenses = ExpirySummaryService.Calculate(
                     client.Licenses.Select(l => l.ExpiryDate))
-
             }).ToList();
 
             TotalWarranties = ExpirySummaryService.Combine(
                 ClientSummaries.Select(c => c.Warranties));
-
             TotalLicenses = ExpirySummaryService.Combine(
                 ClientSummaries.Select(c => c.Licenses));
+
+            return Page();
         }
 
         public async Task<IActionResult> OnPostLogoutAsync()
         {
-            string? staffId =
-                User.FindFirstValue(ClaimTypes.NameIdentifier);
-
+            string? staffId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (staffId != null)
             {
-                await _auditService.LogAsync(
-                    $"Staff ID {staffId} logged out.");
+                await _auditService.LogAsync($"Staff ID {staffId} logged out.");
             }
 
             await HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
-
             return RedirectToPage("/Login");
         }
     }
