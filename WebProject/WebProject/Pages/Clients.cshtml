@@ -13,21 +13,29 @@
 
         <div>
             <h1 class="mb-1">Manage Clients</h1>
+
             <p class="text-muted mb-0">
-                View client inventory and expiry status.
+                @(User.IsInRole("Admin")
+                    ? "View client inventory and expiry status."
+                    : "View your assigned clients and their expiry status.")
             </p>
         </div>
 
         <div class="d-flex flex-wrap gap-2">
-            <a asp-page="/CreateClient"
-               class="btn btn-primary">
-                Create New Client
-            </a>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-page="/CreateClient"
+                   class="btn btn-primary">
+                    Create New Client
+                </a>
+            }
 
             <a asp-page="/Dashboard"
                class="btn btn-secondary">
                 Back to Dashboard
             </a>
+
         </div>
     </div>
 
@@ -66,7 +74,9 @@
     @if (Model.Clients.Count == 0)
     {
         <div class="alert alert-info">
-            No clients found.
+            @(User.IsInRole("Admin")
+                ? "No clients found."
+                : "No assigned clients found.")
         </div>
     }
     else
@@ -100,14 +110,16 @@
                                 View Details
                             </a>
 
-                            <a asp-page="/DeleteClient"
-                               asp-route-id="@client.ClientId"
-                               class="btn btn-sm btn-outline-danger">
-                                Delete
-                            </a>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a asp-page="/DeleteClient"
+                                   asp-route-id="@client.ClientId"
+                                   class="btn btn-sm btn-outline-danger">
+                                    Delete
+                                </a>
+                            }
 
                         </div>
-
                     </div>
 
                     <!-- Warranty Statistics -->
@@ -231,7 +243,6 @@
 
 </div>
 
-
 @section Scripts {
     <script>
         const searchInput = document.querySelector(
@@ -248,7 +259,6 @@
         if (sessionStorage.getItem('restoreSearchFocus') === 'true') {
             searchInput.focus();
 
-            // Place cursor at the end of the search text
             const textLength = searchInput.value.length;
             searchInput.setSelectionRange(textLength, textLength);
 
@@ -261,8 +271,9 @@
 
             searchTimeout = setTimeout(() => {
 
-                // Remember to focus the search bar after reload
-                sessionStorage.setItem('restoreSearchFocus', 'true');
+                sessionStorage.setItem(
+                    'restoreSearchFocus', 'true'
+                );
 
                 searchForm.requestSubmit();
 

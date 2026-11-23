@@ -10,7 +10,7 @@ using WebProject.Services;
 
 namespace WebProject.Pages
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class EditWarrantyModel : PageModel
     {
         private readonly ApplicationDbContext _context;

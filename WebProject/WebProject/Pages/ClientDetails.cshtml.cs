@@ -9,7 +9,7 @@ using WebProject.Services;
 
 namespace WebProject.Pages
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class ClientDetailsModel : PageModel
     {
         private readonly ApplicationDbContext _context;

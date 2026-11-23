@@ -11,7 +11,7 @@ using WebProject.Helpers;
 
 namespace WebProject.Pages
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class AddWarrantyModel : PageModel
     {
         public string MinimumExpiryDate =>
