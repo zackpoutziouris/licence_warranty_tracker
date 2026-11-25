@@ -21,6 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddScoped<IPasswordHasher<Staff>, PasswordHasher<Staff>>();
 builder.Services.AddScoped<AuditService>();
+builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<AuditPdfService>();
 
 // Register cookie authentication
