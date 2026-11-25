@@ -11,15 +11,14 @@ namespace WebProject.Data
         {
         }
 
-        // Existing tables
+        // Tables
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Audit> Audit { get; set; }
-
-        // New tables
         public DbSet<Client> Clients { get; set; }
         public DbSet<Warranty> Warranties { get; set; }
         public DbSet<License> Licenses { get; set; }
         public DbSet<ClientStaff> ClientStaff { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -60,6 +59,35 @@ namespace WebProject.Data
                 .WithMany(c => c.Licenses)
                 .HasForeignKey(l => l.ClientId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            // Notification to Staff relationship
+            modelBuilder.Entity<Notification>()
+                .HasOne(n => n.Staff)
+                .WithMany()
+                .HasForeignKey(n => n.AssignedStaff)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Prevent duplicate notifications
+            modelBuilder.Entity<Notification>()
+                .HasIndex(n => new
+                {
+                    n.AssignedStaff,
+                    n.ItemType,
+                    n.ItemId,
+                    n.ExpiryDate,
+                    n.NotificationType
+                })
+                .IsUnique()
+                .HasDatabaseName("IX_Notifications_Unique");
+
+            // Default notification status
+            modelBuilder.Entity<Notification>()
+                .Property(n => n.HasBeenEmailed)
+                .HasDefaultValue(false);
+
+            modelBuilder.Entity<Notification>()
+                .Property(n => n.HasBeenCleared)
+                .HasDefaultValue(false);
         }
     }
 }
