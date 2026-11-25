@@ -484,10 +484,31 @@
                     }
                 }
             </div>
+
+            <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
+                @if (Model.NotificationCount > 0)
+                {
+                    <form method="post"
+                          asp-page-handler="ClearNotifications"
+                          class="me-auto">
+
+                        <button type="submit"
+                                class="btn btn-outline-danger">
+
+                            Clear All Notifications
+
+                        </button>
+
+                    </form>
+                }
+
+                <button type="button"
+                        class="btn btn-secondary"
                         data-bs-dismiss="modal">
+
                     Close
+
                 </button>
             </div>
         </div>

@@ -109,5 +109,38 @@ namespace WebProject.Pages
                 .ThenByDescending(n => n.NotificationId)
                 .ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostClearNotificationsAsync()
+        {
+            // Retrieve the logged-in staff member's ID
+            string? staffIdValue =
+                User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(staffIdValue, out int staffId))
+            {
+                return Forbid();
+            }
+
+            // Retrieve uncleared notifications belonging to this staff member
+            var notifications = await _context.Notifications
+                .Where(n =>
+                    n.AssignedStaff == staffId &&
+                    !n.HasBeenCleared)
+                .ToListAsync();
+
+            // Mark each notification as cleared
+            foreach (var notification in notifications)
+            {
+                notification.HasBeenCleared = true;
+            }
+
+            // Save changes to the database
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] =
+                "All notifications have been cleared successfully.";
+
+            return RedirectToPage("/Dashboard");
+        }
     }
 }
