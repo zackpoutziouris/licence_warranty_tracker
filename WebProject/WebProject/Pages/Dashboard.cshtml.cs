@@ -27,6 +27,10 @@ namespace WebProject.Pages
         public ExpirySummary TotalWarranties { get; set; } = new();
         public ExpirySummary TotalLicenses { get; set; } = new();
         public List<ClientSummary> ClientSummaries { get; set; } = new();
+        
+        // Notification properties
+        public List<Notification> Notifications { get; set; } = new();
+        public int NotificationCount => Notifications.Count;
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -69,6 +73,7 @@ namespace WebProject.Pages
             TotalLicenses = ExpirySummaryService.Combine(
                 ClientSummaries.Select(c => c.Licenses));
 
+            await LoadNotificationsAsync();
             return Page();
         }
 
@@ -83,6 +88,26 @@ namespace WebProject.Pages
             await HttpContext.SignOutAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToPage("/Login");
+        }
+
+        private async Task LoadNotificationsAsync()
+        {
+            string? staffIdValue =
+                User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(staffIdValue, out int staffId))
+            {
+                return;
+            }
+
+            Notifications = await _context.Notifications
+                .AsNoTracking()
+                .Where(n =>
+                    n.AssignedStaff == staffId &&
+                    !n.HasBeenCleared)
+                .OrderByDescending(n => n.NotificationDate)
+                .ThenByDescending(n => n.NotificationId)
+                .ToListAsync();
         }
     }
 }

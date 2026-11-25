@@ -7,28 +7,8 @@
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\services\\notificationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\services\\notificationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\pages\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|solutionrelative:webproject\\pages\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE979D8A-B637-6477-6E83-D80402547000}|WebProject\\WebProject.csproj|c:\\users\\skull\\documents\\github\\licence_warranty_tracker\\webproject\\webproject\\webproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -42,101 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NotificationBackgroundService.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Services\\NotificationBackgroundService.cs",
-              "RelativeDocumentMoniker": "WebProject\\Services\\NotificationBackgroundService.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Services\\NotificationBackgroundService.cs",
-              "RelativeToolTip": "WebProject\\Services\\NotificationBackgroundService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T13:07:22.445Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "WebProject\\Services\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Services\\NotificationService.cs",
-              "RelativeToolTip": "WebProject\\Services\\NotificationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T13:02:20.133Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "WebProject\\Models\\Notification.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Models\\Notification.cs",
-              "RelativeToolTip": "WebProject\\Models\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-25T12:54:09.647Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Pages\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml",
-              "RelativeToolTip": "WebProject\\Pages\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIBAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-19T13:03:19.718Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dashboard.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml.cs",
-              "RelativeDocumentMoniker": "WebProject\\Pages\\Dashboard.cshtml.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Pages\\Dashboard.cshtml.cs",
-              "RelativeToolTip": "WebProject\\Pages\\Dashboard.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T13:02:57.032Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WebProject",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\WebProject.csproj",
-              "RelativeDocumentMoniker": "WebProject\\WebProject.csproj",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\WebProject.csproj",
-              "RelativeToolTip": "WebProject\\WebProject.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-11-16T13:49:31.913Z",
-              "OwnerCaption": "WebProject"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "WebProject\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "WebProject\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T13:47:05.661Z",
-              "OwnerCaption": "%2"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -150,6 +37,34 @@
               "WhenOpened": "2026-11-12T13:49:11.062Z",
               "EditorCaption": "",
               "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WebProject\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WebProject\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T13:47:05.661Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebProject",
+              "DocumentMoniker": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\WebProject.csproj",
+              "RelativeDocumentMoniker": "WebProject\\WebProject.csproj",
+              "ToolTip": "C:\\Users\\skull\\Documents\\GitHub\\licence_warranty_tracker\\WebProject\\WebProject\\WebProject.csproj",
+              "RelativeToolTip": "WebProject\\WebProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-16T13:49:31.913Z",
+              "EditorCaption": "",
+              "OwnerCaption": "WebProject"
             }
           ]
         }
