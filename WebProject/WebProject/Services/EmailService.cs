@@ -15,9 +15,6 @@ namespace WebProject.Services
         private readonly EmailSettings _emailSettings;
         private readonly ILogger<EmailService> _logger;
 
-        // Temporary delay between emails as we are using the free tier of Mailtrap.
-        private static readonly TimeSpan EmailSendDelay = TimeSpan.FromSeconds(10);
-
         public EmailService(
             ApplicationDbContext context,
             IOptions<EmailSettings> emailSettings,
@@ -69,30 +66,10 @@ namespace WebProject.Services
                     _emailSettings.Password,
                     cancellationToken);
 
-                /*
-                foreach (var notification in notifications)
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-                */
                 
-                // Temporary delay between emails:
-                bool firstEmail = true;
-
                 foreach (var notification in notifications)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
-
-                    // Prevent exceeding the SMTP provider's rate limit.
-                    if (!firstEmail)
-                    {
-                        await Task.Delay(
-                            EmailSendDelay,
-                            cancellationToken);
-                    }
-
-                    firstEmail = false;
-
-                 // Temporary delay between emails ^
 
                     // Recheck the current client assignment.
                     bool isAssigned = await _context.ClientStaff
