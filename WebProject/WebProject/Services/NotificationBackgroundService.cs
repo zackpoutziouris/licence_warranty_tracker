@@ -30,6 +30,7 @@ namespace WebProject.Services
 
             while (!stoppingToken.IsCancellationRequested)
             {
+                // Generate new notifications.
                 try
                 {
                     _logger.LogInformation(
@@ -48,8 +49,6 @@ namespace WebProject.Services
                         "Automatic notification check completed. " +
                         "{Count} new notifications created.",
                         notificationsCreated);
-
-                    // Email processing will be added here later.
                 }
                 catch (OperationCanceledException)
                     when (stoppingToken.IsCancellationRequested)
@@ -62,6 +61,42 @@ namespace WebProject.Services
                         ex,
                         "An error occurred during the " +
                         "automatic notification check.");
+                }
+
+                // Send pending email notifications.
+                if (stoppingToken.IsCancellationRequested)
+                {
+                    break;
+                }
+
+                try
+                {
+                    using var scope = _scopeFactory.CreateScope();
+
+                    var emailService = scope.ServiceProvider
+                        .GetRequiredService<EmailService>();
+
+                    int emailsSent =
+                        await emailService
+                            .SendPendingNotificationsAsync(
+                                stoppingToken);
+
+                    _logger.LogInformation(
+                        "Automatic email check completed. " +
+                        "{Count} emails sent.",
+                        emailsSent);
+                }
+                catch (OperationCanceledException)
+                    when (stoppingToken.IsCancellationRequested)
+                {
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(
+                        ex,
+                        "An error occurred during the " +
+                        "automatic email check.");
                 }
 
                 try

@@ -20,8 +20,10 @@ var connectionString = builder.Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddScoped<IPasswordHasher<Staff>, PasswordHasher<Staff>>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<AuditService>();
 builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<EmailService>();
 builder.Services.AddHostedService<NotificationBackgroundService>();
 builder.Services.AddScoped<AuditPdfService>();
 
